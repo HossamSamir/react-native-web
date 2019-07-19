@@ -1,85 +1,81 @@
 {
-  "private": true,
-  "version": "0.11.5",
-  "name": "react-native-web-monorepo",
-  "scripts": {
-    "clean": "del-cli ./packages/*/dist",
-    "compile": "npm-run-all clean -p \"compile:* -- {@}\" --",
-    "compile:commonjs": "cd packages/react-native-web && cross-env BABEL_ENV=commonjs babel --root-mode upward src --out-dir dist/cjs --ignore \"**/__tests__\"",
-    "compile:es": "cd packages/react-native-web && babel --root-mode upward src --out-dir dist --ignore \"**/__tests__\"",
-    "benchmarks": "cd packages/benchmarks && yarn build",
-    "benchmarks:release": "cd packages/benchmarks && yarn release",
-    "examples": "cd packages/examples && yarn build",
-    "examples:release": "cd packages/examples && yarn release",
-    "website": "cd packages/website && yarn start",
-    "website:release": "cd packages/website && yarn release",
-    "flow": "flow",
-    "fmt": "prettier --write \"**/*.js\"",
-    "jest": "jest --config ./scripts/jest/config.js",
-    "lint": "yarn lint:check --fix",
-    "lint:check": "eslint packages scripts",
-    "precommit": "lint-staged",
-    "prerelease": "yarn test && yarn compile && yarn compile:commonjs",
-    "release": "node ./scripts/release/publish.js",
-    "postrelease": "yarn benchmarks:release && yarn examples:release && yarn website:release",
-    "test": "yarn flow && yarn lint:check && yarn jest --runInBand"
+  "_from": "react-native-web",
+  "_id": "react-native-web@0.11.4",
+  "_inBundle": false,
+  "_integrity": "sha512-xuiHd9mxtOUlCY/CY8UO25a3cX5u3qsEdhl7zXLDNbJ0nu1Tf98GsplBZgdnDB0q/LpYVPQWmjnTEerncsO2vw==",
+  "_location": "/react-native-web",
+  "_phantomChildren": {},
+  "_requested": {
+    "type": "tag",
+    "registry": true,
+    "raw": "react-native-web",
+    "name": "react-native-web",
+    "escapedName": "react-native-web",
+    "rawSpec": "",
+    "saveSpec": null,
+    "fetchSpec": "latest"
   },
-  "devDependencies": {
-    "@babel/cli": "^7.2.3",
-    "@babel/core": "^7.2.2",
-    "@babel/plugin-proposal-class-properties": "^7.2.3",
-    "@babel/plugin-proposal-object-rest-spread": "^7.2.0",
-    "@babel/preset-env": "^7.2.3",
-    "@babel/preset-flow": "^7.0.0",
-    "@babel/preset-react": "^7.0.0",
-    "babel-eslint": "^10.0.0",
-    "babel-jest": "24.0.0-alpha.9",
-    "babel-loader": "^8.0.0",
-    "babel-plugin-add-module-exports": "^1.0.0",
-    "babel-plugin-transform-react-remove-prop-types": "^0.4.21",
-    "caniuse-api": "^2.0.0",
-    "cross-env": "^5.2.0",
-    "del-cli": "^1.1.0",
-    "enzyme": "^3.6.0",
-    "enzyme-adapter-react-16": "^1.5.0",
-    "enzyme-to-json": "^3.3.3",
-    "eslint": "^5.11.1",
-    "eslint-config-prettier": "^3.3.0",
-    "eslint-plugin-promise": "^4.0.1",
-    "eslint-plugin-react": "^7.7.0",
-    "flow-bin": "^0.95.1",
-    "glob": "^7.1.2",
-    "husky": "^0.14.3",
-    "inline-style-prefixer": "^5.0.3",
-    "jest": "24.0.0-alpha.9",
-    "jest-canvas-mock": "^1.0.2",
-    "lint-staged": "^7.1.0",
-    "metro-react-native-babel-preset": "^0.51.0",
-    "npm-run-all": "^4.1.3",
-    "prettier": "^1.12.1",
-    "react": "^16.7.0",
-    "react-dom": "^16.7.0",
-    "react-test-renderer": "^16.7.0"
-  },
-  "workspaces": [
-    "packages/*"
+  "_requiredBy": [
+    "#USER",
+    "/"
   ],
-  "lint-staged": {
-    "packages/react-native-web/src/index.js": [
-      "node ./scripts/babel/createModuleMap.js",
-      "prettier --write ./packages/babel-plugin-react-native-web/src/moduleMap.js",
-      "git add ./packages/babel-plugin-react-native-web/src/moduleMap.js"
-    ],
-    "**/*.js": [
-      "prettier --write",
-      "git update-index --again",
-      "eslint"
-    ]
+  "_resolved": "https://registry.npmjs.org/react-native-web/-/react-native-web-0.11.4.tgz",
+  "_shasum": "86e8158d83a6a41983e43b1c84acaaa342d443b2",
+  "_spec": "react-native-web",
+  "_where": "D:\\Programming\\BumaBuilder",
+  "author": {
+    "name": "Nicolas Gallagher"
   },
-  "prettier": {
-    "printWidth": 100,
-    "singleQuote": true
+  "bugs": {
+    "url": "https://github.com/necolas/react-native-web/issues"
   },
-  "author": "Nicolas Gallagher",
-  "license": "MIT"
+  "bundleDependencies": false,
+  "dependencies": {
+    "array-find-index": "^1.0.2",
+    "create-react-class": "^15.6.2",
+    "debounce": "^1.2.0",
+    "deep-assign": "^3.0.0",
+    "fbjs": "^1.0.0",
+    "hyphenate-style-name": "^1.0.2",
+    "inline-style-prefixer": "^5.0.3",
+    "normalize-css-color": "^1.0.2",
+    "prop-types": "^15.6.0",
+    "react-timer-mixin": "^0.13.4"
+  },
+  "deprecated": false,
+  "description": "React Native for Web",
+  "files": [
+    "dist",
+    "jest",
+    "jest-preset.js",
+    "src",
+    "!**/__tests__"
+  ],
+  "homepage": "https://github.com/necolas/react-native-web#readme",
+  "keywords": [
+    "react",
+    "react-component",
+    "react-native",
+    "web"
+  ],
+  "license": "MIT",
+  "main": "dist/cjs/index.js",
+  "module": "dist/index.js",
+  "name": "react-native-web",
+  "peerDependencies": {
+    "react": ">=16.5.1",
+    "react-dom": ">=16.5.1"
+  },
+  "publishConfig": {
+    "registry": "https://registry.npmjs.org/"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git://github.com/necolas/react-native-web.git"
+  },
+  "sideEffects": false,
+  "tags": [
+    "react"
+  ],
+  "version": "0.11.4"
 }
